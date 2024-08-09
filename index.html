@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .clock {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #3498db;
+            border-radius: 50%;
+            border-top: 10px solid #e74c3c;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="clock"></div>
+        <div class="message">Redirecting in <span id="countdown">5</span> seconds... Please wait.</div>
+    </div>
+
+    <script>
+        var countdownElement = document.getElementById('countdown');
+        var countdown = 5;
+
+        var interval = setInterval(function() {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown === 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+
+        setTimeout(function() {
+            window.location.href = "https://sites.google.com/view/uzairahmedb2b/home";
+        }, 5000);
+    </script>
+</body>
+</html>
